@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.affirmations.data.DataSource
 import com.example.affirmations.ui.theme.AffirmationsTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,6 +19,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val textView: TextView = findViewById(R.id.textView)
-        textView.text = Datasource().loadAffirmations().size.toString()
+        textView.text = DataSource().loadAffirmations().size.toString()
     }
 }
