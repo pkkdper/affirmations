@@ -19,10 +19,14 @@ class AffirmationsListTests {
     val activity = ActivityScenarioRule(MainActivity::class.java)
     @Test fun scroll_to_item() {
         onView(withId(R.id.recycler_view)).perform(
-                RecyclerViewActions.scrollTo<RecyclerView.ViewHolder>(
-                    withText(R.string.affirmation10)
+            RecyclerViewActions
+                .scrollTo<RecyclerView.ViewHolder>(
+                    withText(R.string.affirmation3)
                 )
+        )
+
+        onView(withText(R.string.affirmation3))
+            .check(matches(isDisplayed())
             )
-        onView(withText(R.string.affirmation10)).check(matches(isDisplayed()))
     }
 }
